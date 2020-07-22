@@ -2,6 +2,7 @@ package br.com.data.covid19.exception.controller;
 
 import br.com.data.covid19.exception.ErrosDadosSaidaApi;
 import br.com.data.covid19.exception.UfNaoEncontradaException;
+import br.com.data.covid19.exception.UfNumericaException;
 import br.com.data.covid19.exception.response.ResponseException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -27,7 +28,13 @@ public class ControllerExceptionHandler {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    ResponseException ConstraintViolationException(HttpServletRequest request, ConstraintViolationException exception) {
+    ResponseException constraintViolationException(HttpServletRequest request, ConstraintViolationException exception) {
+        return new ResponseException(request, exception);
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    ResponseException UfNumericaException(HttpServletRequest request, UfNumericaException exception) {
         return new ResponseException(request, exception);
     }
 

@@ -3,6 +3,7 @@ package br.com.data.covid19.service;
 import br.com.data.covid19.bean.DataBeanBrResponse;
 import br.com.data.covid19.bean.DataUfBean;
 import br.com.data.covid19.exception.ErrosDadosSaidaApi;
+import br.com.data.covid19.exception.UfNumericaException;
 import br.com.data.covid19.integracao.covid.bean.DataBrResponse;
 import br.com.data.covid19.integracao.covid.bean.DataUfResponse;
 import br.com.data.covid19.integracao.covid.service.DataServiceClient;
@@ -26,6 +27,7 @@ public class DataCovidService {
     }
 
     public DataUfBean obterDataBrUf(String uf){
+        verificaSeUfEhNumerico(uf);
         estadosBrasilService.verificaExistenciaEstado(uf);
         DataUfResponse brUf = client.obterDataBrUf(uf);
         DataUfBean bean = verificaDadosSaidaUf(brUf);
@@ -45,6 +47,13 @@ public class DataCovidService {
             return dataMapper.toBeanFromBrUfResponse(brUf);
         }catch (Exception e){
             throw new ErrosDadosSaidaApi();
+        }
+    }
+
+    private void verificaSeUfEhNumerico(String uf){
+        Boolean numerico = uf.chars().allMatch(Character::isDigit);
+        if(numerico.equals(true)){
+            throw new UfNumericaException();
         }
     }
 
