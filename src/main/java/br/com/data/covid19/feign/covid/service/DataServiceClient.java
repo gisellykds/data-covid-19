@@ -1,8 +1,8 @@
-package br.com.data.covid19.feign.service;
+package br.com.data.covid19.feign.covid.service;
 
-import br.com.data.covid19.feign.bean.DataBrResponse;
-import br.com.data.covid19.feign.bean.DataUfResponse;
-import br.com.data.covid19.feign.client.DataClient;
+import br.com.data.covid19.feign.covid.bean.DataBrResponse;
+import br.com.data.covid19.feign.covid.bean.DataUfResponse;
+import br.com.data.covid19.feign.covid.client.DataClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
