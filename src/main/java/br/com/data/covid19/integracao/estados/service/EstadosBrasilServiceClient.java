@@ -15,7 +15,4 @@ public class EstadosBrasilServiceClient {
         return estadosBrasilClient.obterUf(uf);
     }
 
-    public List<EstadosBean> obterTodosEstados(){
-        return estadosBrasilClient.obterTodosBr();
-    }
 }
