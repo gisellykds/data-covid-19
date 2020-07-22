@@ -3,6 +3,7 @@ package br.com.data.covid19.mapper.impl;
 import br.com.data.covid19.bean.DataBeanBrResponse;
 import br.com.data.covid19.bean.DataBrBean;
 import br.com.data.covid19.bean.DataUfBean;
+import br.com.data.covid19.exception.ErrosDadosSaidaApi;
 import br.com.data.covid19.integracao.covid.bean.BrResponse;
 import br.com.data.covid19.integracao.covid.bean.DataBrResponse;
 import br.com.data.covid19.integracao.covid.bean.DataUfResponse;

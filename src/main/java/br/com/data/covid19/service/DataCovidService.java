@@ -34,8 +34,7 @@ public class DataCovidService {
 
     private DataBeanBrResponse verificaDadosSaida(DataBrResponse br){
         try{
-            DataBeanBrResponse bean = dataMapper.toBeanFromBrResponse(br);
-            return bean;
+            return dataMapper.toBeanFromBrResponse(br);
         }catch (Exception e){
             throw new ErrosDadosSaidaApi();
         }
@@ -43,10 +42,10 @@ public class DataCovidService {
 
     private DataUfBean verificaDadosSaidaUf(DataUfResponse brUf){
         try{
-            DataUfBean bean = dataMapper.toBeanFromBrUfResponse(brUf);
-            return bean;
+            return dataMapper.toBeanFromBrUfResponse(brUf);
         }catch (Exception e){
             throw new ErrosDadosSaidaApi();
         }
     }
+
 }
