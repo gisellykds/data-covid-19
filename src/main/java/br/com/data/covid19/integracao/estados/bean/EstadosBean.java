@@ -1,9 +1,7 @@
-package br.com.data.covid19.feign.estados.bean;
+package br.com.data.covid19.integracao.estados.bean;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Date;
 
 @Getter
 @Setter

@@ -1,4 +1,4 @@
-package br.com.data.covid19.feign.covid.bean;
+package br.com.data.covid19.integracao.covid.bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

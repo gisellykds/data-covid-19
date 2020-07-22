@@ -2,9 +2,9 @@ package br.com.data.covid19.service;
 
 import br.com.data.covid19.bean.DataBeanBrResponse;
 import br.com.data.covid19.bean.DataUfBean;
-import br.com.data.covid19.feign.covid.bean.DataBrResponse;
-import br.com.data.covid19.feign.covid.bean.DataUfResponse;
-import br.com.data.covid19.feign.covid.service.DataServiceClient;
+import br.com.data.covid19.integracao.covid.bean.DataBrResponse;
+import br.com.data.covid19.integracao.covid.bean.DataUfResponse;
+import br.com.data.covid19.integracao.covid.service.DataServiceClient;
 import br.com.data.covid19.mapper.DataMapper;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
