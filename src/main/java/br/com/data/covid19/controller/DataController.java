@@ -1,6 +1,6 @@
 package br.com.data.covid19.controller;
 
-import br.com.data.covid19.bean.DataBeanBrResponse;
+import br.com.data.covid19.bean.DataBrBean;
 import br.com.data.covid19.bean.DataUfBean;
 import br.com.data.covid19.service.DataCovidService;
 import br.com.data.covid19.service.EstadosBrasilService;
@@ -24,7 +24,7 @@ public class DataController {
     EstadosBrasilService estadosBrasilService;
 
     @GetMapping("")
-    public DataBeanBrResponse obterCasosBr() {
+    public DataBrBean obterCasosBr() {
         return dataService.obterTodos();
     }
 

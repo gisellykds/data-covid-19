@@ -1,6 +1,6 @@
 package br.com.data.covid19.service;
 
-import br.com.data.covid19.bean.DataBeanBrResponse;
+import br.com.data.covid19.bean.DataBrBean;
 import br.com.data.covid19.bean.DataUfBean;
 import br.com.data.covid19.exception.ErrosDadosSaidaApi;
 import br.com.data.covid19.exception.UfNumericaException;
@@ -20,9 +20,9 @@ public class DataCovidService {
     private EstadosBrasilService estadosBrasilService;
     private DataMapper dataMapper = new DataMapperImpl();
 
-    public DataBeanBrResponse obterTodos(){
+    public DataBrBean obterTodos(){
         DataBrResponse br = client.obterTodos();
-        DataBeanBrResponse bean = verificaDadosSaida(br);
+        DataBrBean bean = verificaDadosSaida(br);
         return bean;
     }
 
@@ -34,9 +34,9 @@ public class DataCovidService {
         return bean;
     }
 
-    private DataBeanBrResponse verificaDadosSaida(DataBrResponse br){
+    private DataBrBean verificaDadosSaida(DataBrResponse br){
         try{
-            return dataMapper.toBeanFromBrResponse(br);
+            return dataMapper.brResponseToDataBrBean(br);
         }catch (Exception e){
             throw new ErrosDadosSaidaApi();
         }
